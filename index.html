@@ -12,19 +12,19 @@
 
 <style>
 /* ============================================================
-   TOKENS
+   TOKENS & VARIABLES
    ============================================================ */
 :root{
-  --crema:         #FAF6EF;
-  --crema-alt:     #F3ECDF;
-  --arena:         #E9DFCC;
-  --topo:          #6E6659;
-  --topo-suave:    #948C7D;
-  --tinta:         #2E2A24;
-  --terracota:     #B36A48;
+  --crema:           #FAF6EF;
+  --crema-alt:       #F3ECDF;
+  --arena:           #E9DFCC;
+  --topo:            #6E6659;
+  --topo-suave:      #948C7D;
+  --tinta:           #2E2A24;
+  --terracota:       #B36A48;
   --terracota-suave: #C9846373;
-  --linea:         #DDD2BC;
-  --blanco-roto:   #FFFDFA;
+  --linea:           #DDD2BC;
+  --blanco-roto:     #FFFDFA;
 
   --serif: 'Fraunces', Georgia, serif;
   --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -66,7 +66,7 @@ img{max-width:100%;display:block;}
   border-radius:4px;
 }
 
-h1,h2,h3,h4{
+h1,h2,h3,h4,h5{
   font-family:var(--serif);
   font-weight:500;
   letter-spacing:-0.01em;
@@ -98,7 +98,7 @@ h1,h2,h3,h4{
 }
 
 .section{
-  padding:110px 0;
+  padding:100px 0;
   position:relative;
 }
 .section-alt{
@@ -107,7 +107,7 @@ h1,h2,h3,h4{
 
 .section-head{
   max-width:640px;
-  margin-bottom:64px;
+  margin-bottom:54px;
 }
 .section-head h2{
   font-size:clamp(28px,3.4vw,40px);
@@ -120,7 +120,7 @@ h1,h2,h3,h4{
   max-width:520px;
 }
 
-/* Reveal on scroll */
+/* Scroll reveal */
 .reveal{
   opacity:0;
   transform:translateY(22px);
@@ -132,27 +132,23 @@ h1,h2,h3,h4{
 }
 
 /* ============================================================
-   NAV
+   NAVBAR
    ============================================================ */
 header{
   position:fixed;
   top:0; left:0; right:0;
   z-index:200;
-  background:rgba(250,246,239,0.82);
+  background:rgba(250,246,239,0.92);
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid transparent;
-  transition:border-color .4s var(--ease), box-shadow .4s var(--ease);
-}
-header.scrolled{
   border-bottom:1px solid var(--linea);
-  box-shadow:0 6px 24px -18px rgba(46,42,36,0.25);
+  transition:border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
 nav{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:20px 32px;
+  padding:18px 32px;
   max-width:1120px;
   margin:0 auto;
 }
@@ -172,11 +168,11 @@ nav{
 }
 .nav-links{
   display:flex;
-  gap:34px;
+  gap:24px;
   align-items:center;
 }
 .nav-links a{
-  font-size:14.5px;
+  font-size:14px;
   color:var(--topo);
   position:relative;
   padding:4px 0;
@@ -202,6 +198,7 @@ nav{
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:8px;
   padding:11px 22px;
   border-radius:999px;
@@ -260,7 +257,7 @@ nav{
   width:min(78vw,320px);
   background:var(--blanco-roto);
   z-index:190;
-  padding:100px 32px 40px;
+  padding:90px 28px 40px;
   transform:translateX(100%);
   transition:transform .45s var(--ease);
   box-shadow:-20px 0 40px -20px rgba(0,0,0,0.15);
@@ -269,8 +266,8 @@ nav{
 .mobile-menu a{
   display:block;
   font-family:var(--serif);
-  font-size:22px;
-  padding:14px 0;
+  font-size:20px;
+  padding:12px 0;
   border-bottom:1px solid var(--linea);
   color:var(--tinta);
 }
@@ -283,7 +280,7 @@ nav{
 }
 .overlay.open{opacity:1; pointer-events:auto;}
 
-@media (max-width: 860px){
+@media (max-width: 980px){
   .nav-links{display:none;}
   .nav-cta .btn-ghost{display:none;}
   .burger{display:flex;}
@@ -294,14 +291,14 @@ nav{
    HERO
    ============================================================ */
 .hero{
-  padding:190px 0 120px;
+  padding:170px 0 90px;
   position:relative;
   overflow:hidden;
 }
 .hero-grid{
   display:grid;
   grid-template-columns:1.2fr 0.9fr;
-  gap:60px;
+  gap:50px;
   align-items:center;
 }
 .hero-kicker{
@@ -313,8 +310,8 @@ nav{
   margin-bottom:22px;
 }
 .hero h1{
-  font-size:clamp(40px,6vw,68px);
-  line-height:1.04;
+  font-size:clamp(38px,5.5vw,64px);
+  line-height:1.06;
   font-weight:500;
 }
 .hero h1 em{
@@ -324,12 +321,12 @@ nav{
 }
 .hero-role{
   margin-top:22px;
-  font-size:19px;
+  font-size:17.5px;
   color:var(--topo);
-  max-width:480px;
+  max-width:500px;
 }
 .hero-actions{
-  margin-top:38px;
+  margin-top:36px;
   display:flex;
   gap:14px;
   flex-wrap:wrap;
@@ -352,13 +349,13 @@ nav{
 }
 .hero-card-value{
   font-family:var(--serif);
-  font-size:34px;
+  font-size:32px;
   color:var(--tinta);
 }
 .sparkline{
-  margin-top:22px;
+  margin-top:20px;
   width:100%;
-  height:90px;
+  height:85px;
 }
 .sparkline path{
   fill:none;
@@ -378,11 +375,11 @@ nav{
 @keyframes fadein{to{opacity:1;}}
 
 .hero-divider{
-  margin-top:80px;
+  margin-top:70px;
 }
 .trend-rule{
   width:100%;
-  height:22px;
+  height:20px;
   opacity:.55;
 }
 .trend-rule path{
@@ -393,12 +390,12 @@ nav{
 }
    
 /* ============================================================
-   SOBRE MI
+   SOBRE MÍ
    ============================================================ */
 .about-grid{
   display:grid;
   grid-template-columns:0.8fr 1.2fr;
-  gap:64px;
+  gap:60px;
   align-items:start;
 }
 .about-portrait{
@@ -409,41 +406,27 @@ nav{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-family:var(--mono);
-  font-size:13px;
-  color:var(--topo-suave);
-  letter-spacing:.05em;
-  text-align:center;
-  padding:20px;
   position:relative;
   overflow:hidden;
 }
-.about-portrait::after{
-  content:"";
-  position:absolute;
-  inset:14px;
-  border:1px solid var(--terracota-suave);
-  border-radius:10px;
-}
 .about-text p{
-  font-size:17px;
+  font-size:16.5px;
   color:var(--topo);
   margin-bottom:20px;
   max-width:560px;
 }
-.about-text strong{color:var(--tinta); font-weight:500;}
 .about-signature{
-  margin-top:36px;
-  padding-top:28px;
+  margin-top:32px;
+  padding-top:24px;
   border-top:1px solid var(--linea);
   display:flex;
-  gap:40px;
+  gap:36px;
   flex-wrap:wrap;
 }
 .about-signature div span{
   display:block;
   font-family:var(--mono);
-  font-size:12px;
+  font-size:11.5px;
   color:var(--topo-suave);
   text-transform:uppercase;
   letter-spacing:.08em;
@@ -451,12 +434,12 @@ nav{
 }
 .about-signature div strong{
   font-family:var(--serif);
-  font-size:20px;
+  font-size:19px;
   font-weight:500;
 }
 
 /* ============================================================
-   METRICAS CLAVE
+   MÉTRICAS CLAVE
    ============================================================ */
 .metrics-grid{
   display:grid;
@@ -469,7 +452,7 @@ nav{
 }
 .metric-card{
   background:var(--blanco-roto);
-  padding:38px 28px;
+  padding:36px 24px;
   transition:background .35s var(--ease);
 }
 .metric-card:hover{
@@ -477,7 +460,7 @@ nav{
 }
 .metric-value{
   font-family:var(--mono);
-  font-size:44px;
+  font-size:40px;
   font-weight:500;
   color:var(--terracota);
   line-height:1;
@@ -486,17 +469,13 @@ nav{
   gap:4px;
 }
 .metric-value .suffix{
-  font-size:20px;
+  font-size:18px;
   color:var(--topo);
 }
 .metric-label{
   margin-top:12px;
-  font-size:14px;
+  font-size:13.5px;
   color:var(--topo);
-}
-
-@media (max-width:760px){
-  .metrics-grid{grid-template-columns:repeat(2,1fr);}
 }
 
 /* ============================================================
@@ -509,37 +488,31 @@ nav{
 }
 .tools-col h4{
   font-family:var(--mono);
-  font-size:12.5px;
+  font-size:12px;
   text-transform:uppercase;
   letter-spacing:.1em;
   color:var(--topo-suave);
-  margin-bottom:18px;
-  padding-bottom:12px;
+  margin-bottom:16px;
+  padding-bottom:10px;
   border-bottom:1px solid var(--linea);
 }
 .tool-pill{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:13px 4px;
+  padding:12px 4px;
   border-bottom:1px solid var(--linea);
-  font-size:15.5px;
+  font-size:15px;
   transition:padding-left .3s var(--ease), color .3s var(--ease);
 }
-.tools-col .tool-pill:last-child{border-bottom:none;}
 .tool-pill:hover{
-  padding-left:10px;
+  padding-left:8px;
   color:var(--terracota);
 }
 .tool-level{
   font-family:var(--mono);
   font-size:11px;
   color:var(--topo-suave);
-  letter-spacing:.05em;
-}
-
-@media (max-width:820px){
-  .tools-columns{grid-template-columns:1fr; gap:44px;}
 }
 
 /* ============================================================
@@ -548,7 +521,6 @@ nav{
 .timeline{
   position:relative;
   max-width:760px;
-  margin-top:10px;
 }
 .timeline::before{
   content:"";
@@ -562,17 +534,17 @@ nav{
   display:grid;
   grid-template-columns:110px 1fr;
   gap:32px;
-  padding-bottom:52px;
+  padding-bottom:48px;
   position:relative;
 }
 .timeline-item:last-child{padding-bottom:0;}
 .timeline-date{
   font-family:var(--mono);
-  font-size:13.5px;
+  font-size:13px;
   color:var(--topo-suave);
   padding-top:2px;
   text-align:right;
-  padding-right:26px;
+  padding-right:24px;
 }
 .timeline-item::after{
   content:"";
@@ -581,123 +553,98 @@ nav{
   top:6px;
   width:9px;height:9px;
   border-radius:50%;
-  background:var(--crema);
+  background:var(--crema-alt);
   border:2px solid var(--terracota);
 }
 .timeline-body h3{
-  font-size:20px;
+  font-size:19px;
   font-weight:500;
 }
 .timeline-role{
   font-family:var(--mono);
-  font-size:12.5px;
+  font-size:12px;
   color:var(--terracota);
   text-transform:uppercase;
   letter-spacing:.06em;
-  margin-top:4px;
-  margin-bottom:10px;
+  margin:4px 0 10px;
 }
 .timeline-body p{
   color:var(--topo);
-  font-size:15.5px;
-  max-width:520px;
-}
-
-@media (max-width:640px){
-  .timeline::before{left:0;}
-  .timeline-item{grid-template-columns:1fr;}
-  .timeline-date{text-align:left; padding-right:0; padding-left:20px;}
-  .timeline-item::after{left:-4px;}
-  .timeline-body{padding-left:20px;}
+  font-size:15px;
 }
 
 /* ============================================================
-   PROYECTOS
+   PROYECTOS E INVESTIGACIÓN
    ============================================================ */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+  gap: 24px;
 }
-
 .project-card {
   background: var(--blanco-roto);
   border: 1px solid var(--linea);
   border-radius: var(--radio);
-  padding: 28px;
+  padding: 26px;
   display: flex;
   flex-direction: column;
   transition: transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
-
 .project-card:hover {
   transform: translateY(-6px);
   border-color: var(--terracota);
   box-shadow: 0 18px 34px -22px rgba(46, 42, 36, .35);
 }
-
 .project-thumb {
-  height: 130px;
-  border-radius: 9px;
+  height: 110px;
+  border-radius: 8px;
   background: linear-gradient(135deg, var(--arena), var(--crema-alt));
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   position: relative;
   overflow: hidden;
 }
-
 .project-thumb svg {
   position: absolute;
-  bottom: 0; 
-  left: 0; 
-  right: 0;
-  width: 100%; 
-  height: 70%;
+  bottom: 0; left: 0; right: 0;
+  width: 100%; height: 75%;
   opacity: .6;
   transition: opacity .3s var(--ease);
 }
-
-.project-card:hover .project-thumb svg {
-  opacity: .95;
-}
-
+.project-card:hover .project-thumb svg { opacity: .95; }
 .project-thumb svg path {
   fill: none;
   stroke: var(--terracota);
   stroke-width: 2;
 }
-
 .project-tags {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
-
 .tag {
   font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: .05em;
+  font-size: 10px;
+  letter-spacing: .04em;
   text-transform: uppercase;
-  padding: 5px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
   background: var(--crema-alt);
   color: var(--topo);
   border: 1px solid var(--linea);
 }
-
 .project-card h3 {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 500;
   margin-bottom: 8px;
+  line-height: 1.3;
 }
-
 .project-card p {
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--topo);
   flex-grow: 1;
   margin-bottom: 18px;
 }
-
 .project-link {
   font-size: 13.5px;
   font-weight: 500;
@@ -705,57 +652,246 @@ nav{
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  text-decoration: none;
   margin-top: auto;
 }
-
 .project-link svg {
-  width: 13px;
-  height: 13px;
+  width: 13px; height: 13px;
   transition: transform .3s var(--ease);
 }
-
 .project-card:hover .project-link svg {
   transform: translate(3px, -3px);
 }
 
-/* Adaptación a dispositivos móviles y tablets */
-@media (max-width: 900px) {
-  .projects-grid { 
-    grid-template-columns: 1fr 1fr; 
-  }
+/* ============================================================
+   FORMACIÓN COMPLEMENTARIA
+   ============================================================ */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.edu-card {
+  background: var(--blanco-roto);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .35s var(--ease), border-color .35s var(--ease);
+}
+.edu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--terracota);
+}
+.edu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+.edu-institution {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--terracota);
+}
+.edu-badge {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--crema-alt);
+  color: var(--topo-suave);
+  white-space: nowrap;
+}
+.edu-card h3 {
+  font-size: 17.5px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.edu-card p {
+  font-size: 14px;
+  color: var(--topo);
+  margin-bottom: 18px;
+  flex-grow: 1;
 }
 
-@media (max-width: 640px) {
-  .projects-grid { 
-    grid-template-columns: 1fr; 
-  }
+/* ============================================================
+   COMENTARIOS Y CONTACTO (ESTILOS FORMULARIO CORREGIDOS)
+   ============================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: start;
+}
+.comment-form {
+  background: var(--blanco-roto);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.form-field label {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--topo);
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--crema);
+  border: 1px solid var(--linea);
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  color: var(--tinta);
+  transition: border-color .3s var(--ease), background .3s var(--ease);
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--terracota);
+  background: var(--blanco-roto);
+}
+.comment-submitted {
+  display: none;
+  padding: 12px 16px;
+  background: rgba(179,106,72,0.12);
+  border: 1px solid var(--terracota);
+  border-radius: 8px;
+  color: var(--terracota);
+  font-size: 13.5px;
+  text-align: center;
+}
+.comment-submitted.visible { display: block; }
+
+.contact-info-card {
+  background: var(--blanco-roto);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact-info-item {
+  margin-bottom: 24px;
+}
+.contact-info-item:last-child { margin-bottom: 0; }
+.contact-info-item span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  color: var(--topo-suave);
+  margin-bottom: 4px;
+}
+.contact-info-item a, 
+.contact-info-item p {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--tinta);
+  transition: color .3s var(--ease);
+}
+.contact-info-item a:hover {
+  color: var(--terracota);
 }
 
-  padding-top:30px;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-  font-size:13px;
-  color:#8A8171;
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--crema-alt);
+  border-top: 1px solid var(--linea);
+  padding: 60px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.footer-brand p {
+  font-size: 14px;
+  color: var(--topo);
+  max-width: 360px;
+}
+.footer-col h5 {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--topo-suave);
+  margin-bottom: 16px;
+}
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: var(--topo);
+  margin-bottom: 8px;
+  transition: color .3s var(--ease);
+}
+.footer-col a:hover { color: var(--terracota); }
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--linea);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--topo-suave);
 }
 
-@media (max-width:760px){
-  .footer-grid{grid-template-columns:1fr;}
-  .hero-grid{grid-template-columns:1fr;}
-  .about-grid{grid-template-columns:1fr;}
-  .metrics-grid{grid-template-columns:1fr 1fr;}
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 900px){
+  .projects-grid, .education-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .hero-grid, .about-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .tools-columns { grid-template-columns: 1fr; gap: 30px; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-@media (max-width:900px){
-  .projects-grid{grid-template-columns:1fr 1fr;}
+@media (max-width: 640px){
+  .metrics-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .timeline::before { left: 0; }
+  .timeline-item { grid-template-columns: 1fr; }
+  .timeline-date { text-align: left; padding-right: 0; padding-left: 20px; }
+  .timeline-item::after { left: -4px; }
+  .timeline-body { padding-left: 20px; }
 }
 </style>
 </head>
 <body>
 
-NAV
+<!-- ============================================================
+     NAVBAR
      ============================================================ -->
 <header id="siteHeader">
   <nav>
@@ -768,11 +904,11 @@ NAV
       <li><a href="#trayectoria">Trayectoria</a></li>
       <li><a href="#proyectos">Investigación</a></li>
       <li><a href="#formacion">Formación</a></li>
-      <li><a href="#comentarios">Comentarios</a></li>
+      <li><a href="#comentarios">Contacto</a></li>
     </ul>
 
     <div class="nav-cta">
-      <a href="#contacto" class="btn btn-ghost">Contacto</a>
+      <a href="#comentarios" class="btn btn-ghost">Contacto</a>
       <a href="https://drive.google.com/file/d/1szMiSSO0BSCyxV61dB-aMJYLhTzrMzOW/view?usp=drivesdk" target="_blank" rel="noopener" class="btn btn-primary">Descargar CV</a>
     </div>
 
@@ -790,8 +926,7 @@ NAV
   <a href="#trayectoria">Trayectoria</a>
   <a href="#proyectos">Investigación</a>
   <a href="#formacion">Formación</a>
-  <a href="#comentarios">Comentarios</a>
-  <a href="#contacto">Contacto</a>
+  <a href="#comentarios">Contacto</a>
 </div>
 
 <!-- ============================================================
@@ -829,14 +964,14 @@ NAV
 </section>
 
 <!-- ============================================================
-     BANNER DE EXPERIENCIA Y FRASE
+     BANNER DE EXPERIENCIA
      ============================================================ -->
-<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
-  <div style="background-color: var(--card-bg, #f4eee6); border: 1px solid var(--border-color, #e6ded5); border-radius: 12px; padding: 25px 30px; text-align: center;">
-    <p style="font-size: 1.1rem; font-style: italic; color: var(--text-main, #2c2522); margin-bottom: 8px; font-weight: 500;">
+<div class="container" style="margin-top: 10px; margin-bottom: 20px;">
+  <div style="background-color: var(--crema-alt); border: 1px solid var(--linea); border-radius: 12px; padding: 24px 30px; text-align: center;">
+    <p style="font-size: 1.05rem; font-style: italic; color: var(--tinta); margin-bottom: 6px; font-weight: 500;">
       "Transformando la complejidad de los datos en claridad estratégica para el negocio."
     </p>
-    <div style="font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-color, #8c6d46); font-weight: 600;">
+    <div style="font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terracota); font-weight: 600;">
       +5 años de trayectoria académica y analítica
     </div>
   </div>
@@ -859,7 +994,7 @@ NAV
 
       <div class="about-text reveal">
         <p>Ayudo a empresas y organizaciones a anticipar tendencias de mercado, proyectar escenarios y reducir la incertidumbre mediante modelos econométricos y análisis cuantitativo, traduciendo información compleja en indicadores claros que respaldan la estrategia comercial y financiera.</p>
-        <p>Para ello, combino un sólido rigor analítico y una visión orientada a resultados con el dominio técnico de Eviews, Stata, R y Power BI, aportando la precisión cuantitativa exacta que el negocio necesita para decidir con fundamentos sólidos.</p>
+        <p>Para ello, combino un sólido rigor analítico y una visión orientada a resultados con el dominio técnico de Python, SQL, Eviews, Stata, R y Power BI, aportando la precisión cuantitativa exacta que el negocio necesita para decidir con fundamentos sólidos.</p>
 
         <div class="about-signature">
           <div>
@@ -883,7 +1018,7 @@ NAV
 <!-- ============================================================
      MÉTRICAS CLAVE
      ============================================================ -->
-<section class="section" id="metricas">
+<section class="section section-alt" id="metricas">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Métricas Clave</div>
@@ -894,60 +1029,61 @@ NAV
     <div class="metrics-grid">
       <div class="metric-card reveal">
         <div class="metric-value">2</div>
-        <div class="metric-label">Veces asistente en investigación aplicada (LAPDE/UNT - BID - Banco Mundial)</div>
+        <div class="metric-label">Proyectos de investigación aplicada (LAPDE/UNT - BID - Banco Mundial)</div>
       </div>
 
       <div class="metric-card reveal">
-        <div class="metric-value">4</div>
-        <div class="metric-label">Software estadísticos de uso profesional</div>
+        <div class="metric-value">6+</div>
+        <div class="metric-label">Lenguajes y herramientas analíticas dominadas</div>
       </div>
 
       <div class="metric-card reveal">
         <div class="metric-value">0 <span class="suffix">Aplazos</span></div>
-        <div class="metric-label" style="font-size: 0.85rem; margin-top: 4px;">Historial académico limpio</div>
+        <div class="metric-label">Historial académico impecable en la UNT</div>
       </div>
 
       <div class="metric-card reveal">
         <div class="metric-value">100%</div>
-        <div class="metric-label">Disponibilidad horaria</div>
+        <div class="metric-label">Disponibilidad para proyectos e incorporación</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     HERRAMIENTAS
+     HERRAMIENTAS Y TECNOLOGÍAS
      ============================================================ -->
 <section class="section" id="herramientas">
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Herramientas</div>
-      <h2>Con qué trabajo.</h2>
-      <p>Lenguajes, software y métodos que utilizo en mi día a día como analista.</p>
+      <h2>Stack tecnológico y analítico.</h2>
+      <p>Lenguajes, entornos de programación y software que empleo en análisis de datos y econometría.</p>
     </div>
 
     <div class="tools-columns reveal">
       <div class="tools-col">
-        <h4>Software estadístico &amp; econométrico</h4>
-        <div class="tool-pill"><span>EViews</span><span class="tool-level">Intermedio</span></div>
-        <div class="tool-pill"><span>Stata</span><span class="tool-level">Intermedio</span></div>
+        <h4>Programación &amp; Bases de Datos</h4>
+        <div class="tool-pill"><span>SQL</span><span class="tool-level">Intermedio</span></div>
+        <div class="tool-pill"><span>Python</span><span class="tool-level">Intermedio</span></div>
+        <div class="tool-pill"><span>Streamlit</span><span class="tool-level">Intermedio</span></div>
         <div class="tool-pill"><span>R</span><span class="tool-level">Intermedio</span></div>
+      </div>
+
+      <div class="tools-col">
+        <h4>Econometría &amp; Software Estadístico</h4>
+        <div class="tool-pill"><span>Stata</span><span class="tool-level">Intermedio</span></div>
+        <div class="tool-pill"><span>EViews</span><span class="tool-level">Intermedio</span></div>
         <div class="tool-pill"><span>Series temporales</span><span class="tool-level">Intermedio</span></div>
+        <div class="tool-pill"><span>Modelos Probit / Logit</span><span class="tool-level">Avanzado</span></div>
       </div>
 
       <div class="tools-col">
-        <h4>Análisis &amp; visualización de datos</h4>
+        <h4>Visualización &amp; Documentación</h4>
         <div class="tool-pill"><span>Power BI</span><span class="tool-level">Intermedio</span></div>
-        <div class="tool-pill"><span>Excel</span><span class="tool-level">Intermedio-Avanzado</span></div>
-        <div class="tool-pill"><span>Microsoft Office</span><span class="tool-level">Intermedio-Avanzado</span></div>
-      </div>
-
-      <div class="tools-col">
-        <h4>Otras herramientas</h4>
+        <div class="tool-pill"><span>Excel / DAX</span><span class="tool-level">Intermedio-Avanzado</span></div>
         <div class="tool-pill"><span>LaTeX</span><span class="tool-level">Intermedio</span></div>
-        <div class="tool-pill"><span>Bases de datos socioeconómicas</span><span class="tool-level">Intermedio</span></div>
-        <div class="tool-pill"><span>Redacción técnica con IA</span><span class="tool-level">Intermedio</span></div>
-        <div class="tool-pill"><span>Inglés</span><span class="tool-level">A1 en curso</span></div>
+        <div class="tool-pill"><span>Redacción Técnica e IA</span><span class="tool-level">Intermedio</span></div>
       </div>
     </div>
   </div>
@@ -960,44 +1096,44 @@ NAV
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Trayectoria</div>
-      <h2>Mi camino profesional.</h2>
-      <p>Un resumen cronológico de mi experiencia laboral y hitos relevantes.</p>
+      <h2>Experiencia y Roles.</h2>
+      <p>Proyectos institucionales e hitos laborales aplicados al análisis de datos.</p>
     </div>
 
     <div class="timeline reveal">
       <div class="timeline-item">
         <div class="timeline-date">Abr 2026</div>
         <div class="timeline-body">
-          <h3><a href="https://drive.google.com/file/d/19kkMg97Ix-DqOLNAqjr-dJ6GuYT1slSu/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Asistente en procesamiento de datos — Proyecto BID</a></h3>
+          <h3>Asistente en procesamiento de datos — Proyecto BID</h3>
           <div class="timeline-role">LAPDE (FACE-UNT) · Tucumán, Argentina</div>
-          <p>Carga, codificación y digitalización de encuestas socioeconómicas en soporte papel, construyendo bases de datos en Excel a partir de criterios de codificación predefinidos. Revisión de consistencia y preparación de la información para su posterior análisis.</p>
+          <p>Carga, codificación y digitalización de encuestas socioeconómicas en soporte papel para el diagnóstico del proyecto en los Valles Calchaquíes. Construcción de bases de datos estructuradas y control de consistencia.</p>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">Oct 2025</div>
         <div class="timeline-body">
-          <h3><a href="https://drive.google.com/file/d/1F-KEHAWPX8_GlgVVfAqOoMIR3zl06DvD/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Asistente en Proyecto de ciencias del comportamiento</a></h3>
-          <div class="timeline-role">LAPDE · Banco Mundial · BIT · INECO · Tucumán, Argentina</div>
-          <p>Relevamiento de información en campo mediante observación sistematizada y registro de conductas. Digitalización y sistematización de los datos recolectados para su posterior análisis.</p>
+          <h3>Asistente en Proyecto de ciencias del comportamiento</h3>
+          <div class="timeline-role">LAPDE · Banco Mundial · BIT · INECO · Tucumán</div>
+          <p>Relevamiento de información en campo mediante observación sistematizada y registro de conductas. Digitalización, depuración y estructuración de datos para análisis del comportamiento.</p>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">May–Jun 2025</div>
         <div class="timeline-body">
-          <h3><a href="https://www.comunicaciontucuman.gob.ar/noticia/gobierno-justicia/235068/tucuman-fue-sede-tercera-edicion-modelo-ue" target="_blank" rel="noopener noreferrer">Modelo de la Unión Europea — Tucumán</a></h3>
-          <div class="timeline-role">Formación complementaria</div>
-          <p>Simulación de negociaciones internacionales y elaboración de propuestas de política pública mediante indicadores de evaluación.</p>
+          <h3>Modelo de la Unión Europea — Tucumán</h3>
+          <div class="timeline-role">Delegación &amp; Política Pública</div>
+          <p>Simulación de negociaciones internacionales y formulación de propuestas de política pública basadas en indicadores cuantitativos.</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">2022 — hoy</div>
+        <div class="timeline-date">2022 — Hoy</div>
         <div class="timeline-body">
           <h3>Licenciatura en Economía</h3>
           <div class="timeline-role">Universidad Nacional de Tucumán (FACE-UNT)</div>
-          <p>Formación avanzada en microeconomía, macroeconomía, econometría y ciencia de datos aplicados a la toma de decisiones.</p>
+          <p>Formación universitaria avanzada enfocada en métodos cuantitativos, microeconomía, macroeconomía y econometría aplicada.</p>
         </div>
       </div>
     </div>
@@ -1011,8 +1147,8 @@ NAV
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Investigación &amp; Proyectos</div>
-      <h2>Trabajo aplicado y formación en curso.</h2>
-      <p>Investigación de tesis, pósters científicos, documentos de trabajo académicos y aplicaciones interactivas de auditoría.</p>
+      <h2>Trabajos destacados &amp; Desarrollo.</h2>
+      <p>Investigación académica, aplicaciones interactivas en Python y tableros interactivos de BI.</p>
     </div>
 
     <div class="projects-grid reveal">
@@ -1027,8 +1163,25 @@ NAV
           <span class="tag">Econometría</span>
         </div>
         <h3>Tesis de grado en desarrollo</h3>
-        <p>Análisis de cómo el Impuesto a los Ingresos Brutos (IIBB), los paros sindicales y los juicios laborales afectan la probabilidad de informalidad laboral asalariada. Evidencia comparada 2016–2023 para 3 provincias del NOA y 3 del Sur.</p>
-        <a href="https://docs.google.com/document/d/1VlOzShX94g-YUzRsoRyZovPJ3eCh8_Jl/edit?usp=drivesdk&ouid=106570689948751732970&rtpof=true&sd=true" target="_blank" rel="noopener" class="project-link">Seguir el avance de la tesis
+        <p>Análisis de cómo el Impuesto a los Ingresos Brutos (IIBB), los paros sindicales y los juicios laborales afectan la probabilidad de informalidad laboral asalariada (2016–2023).</p>
+        <a href="https://docs.google.com/document/d/1VlOzShX94g-YUzRsoRyZovPJ3eCh8_Jl/edit?usp=drivesdk&ouid=106570689948751732970&rtpof=true&sd=true" target="_blank" rel="noopener" class="project-link">Seguir el avance
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+
+      <!-- Proyecto Streamlit / Python -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 200 70" preserveAspectRatio="none"><path d="M0,25 C50,5 90,55 140,20 S 180,45 200,10"></path></svg>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">ETL</span>
+        </div>
+        <h3>Sistema Web de Auditoría Operativa (Castillo S.A.)</h3>
+        <p>Aplicación en Python para control de gestión: ingestión ETL en tiempo real, auditoría de arqueos por sucursal, metas comerciales y demoras logísticas.</p>
+        <a href="https://auditoria-castillo.streamlit.app/" target="_blank" rel="noopener" class="project-link">Ver Aplicación Web
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
       </div>
@@ -1043,7 +1196,7 @@ NAV
           <span class="tag">Series Temporales</span>
         </div>
         <h3>Dinámica Inflacionaria y Regímenes Cambiarios</h3>
-        <p>Estimación de los efectos del colapso del Plan de Convertibilidad sobre la aceleración de la inflación mediante análisis de intervención. Documento de trabajo académico (FACE-UNT, 2026).</p>
+        <p>Estimación de los efectos del colapso del Plan de Convertibilidad sobre la aceleración de la inflación mediante análisis de intervención (FACE-UNT, 2026).</p>
         <a href="https://drive.google.com/file/d/1jb9bW6bFPU6gy2hDSpkmSvSiYmFStg5x/view?usp=drivesdk" target="_blank" rel="noopener" class="project-link">Ver Documento
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
@@ -1058,27 +1211,9 @@ NAV
           <span class="tag">Probit</span>
           <span class="tag">EPH (INDEC)</span>
         </div>
-        <h3>Impacto del COVID-19 en la Educación Patagónica</h3>
-        <p>Estimación mediante modelos Probit del impacto de la pandemia sobre la probabilidad de asistencia escolar (2009–2023) utilizando microdatos de la EPH. Trabajo de Econometría (2024), coautoría con Francisco Javier Lardies de los Rios.</p>
+        <h3>Impacto del COVID-19 en Educación Patagónica</h3>
+        <p>Estimación con modelos Probit sobre el impacto de la pandemia en la asistencia escolar (2009–2023) mediante microdatos EPH. Coautoría con F. Lardies.</p>
         <a href="https://drive.google.com/file/d/1MO2juPGqhwQehm9j7z7DRW4_1sq_ToEI/view?usp=drivesdk" target="_blank" rel="noopener" class="project-link">Ver Póster Académico
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-        </a>
-      </div>
-
-      <!-- Proyecto Streamlit / Python -->
-      <div class="project-card">
-        <div class="project-thumb">
-          <svg viewBox="0 0 200 70" preserveAspectRatio="none"><path d="M0,25 C50,5 90,55 140,20 S 180,45 200,10"></path></svg>
-        </div>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag">Auditoría Operativa</span>
-          <span class="tag">ETL</span>
-        </div>
-        <h3>Sistema Web de Auditoría y Control Operativo (Castillo S.A.)</h3>
-        <p>Aplicación interactiva desarrollada en Python para el control integral de gestión: simulación de ingestion/ETL de datos en tiempo real, auditoría de arqueos de caja y faltantes de dinero por sucursal, seguimiento de cumplimiento comercial por vendedor y control de demoras logísticas con exportación de datos.</p>
-        <a href="https://auditoria-castillo.streamlit.app/" target="_blank" rel="noopener" class="project-link">Ver Aplicación Web (Streamlit)
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
       </div>
@@ -1090,12 +1225,11 @@ NAV
         </div>
         <div class="project-tags">
           <span class="tag">Power BI</span> 
-          <span class="tag">Dashboards</span>
-          <span class="tag">KPIs</span>
+          <span class="tag">Logística</span>
         </div>
-        <h3>Dashboard de Control Operativo y Monitoreo de Logística</h3>
-        <p>Monitoreo en tiempo real de flujo de flota, métricas de transporte, tiempos de espera/descarga y análisis de fallas por tipo de material.</p>
-        <a href="https://app.powerbi.com/groups/me/reports/82e08b34-c13d-4a76-8e2b-1d6a8be17391/5d83477067d423ee3e1d?redirectedFromSignup=1&experience=power-bi" target="_blank" rel="noopener" class="project-link">Ver Reporte
+        <h3>Dashboard de Control Operativo y Logística</h3>
+        <p>Monitoreo en tiempo real de flujo de flota, métricas de transporte, tiempos de espera/descarga y análisis de fallas por material.</p>
+        <a href="https://app.powerbi.com/groups/me/reports/82e08b34-c13d-4a76-8e2b-1d6a8be17391/5d83477067d423ee3e1d?redirectedFromSignup=1&experience=power-bi" target="_blank" rel="noopener" class="project-link">Ver Reporte BI
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
       </div>
@@ -1107,12 +1241,11 @@ NAV
         </div>
         <div class="project-tags">
           <span class="tag">Power BI</span>
-          <span class="tag">Modelado de Datos</span>
-          <span class="tag">BI</span>
+          <span class="tag">Ventas &amp; KPIs</span>
         </div>
-        <h3>Dashboard de Desempeño Comercial y Productividad laboral</h3>
-        <p>Análisis integral de KPIs de ventas, cumplimiento de objetivos por trabajador y evaluación de eficiencia comercial por línea de producto.</p>
-        <a href="https://app.powerbi.com/groups/me/reports/7f2bc723-0c3f-48cd-a471-752a85bd5d41/ReportSectionbce81a0c7f21570b7e8c?redirectedFromSignup=1&experience=power-bi" target="_blank" rel="noopener" class="project-link">Ver Reporte
+        <h3>Dashboard Comercial y Productividad Laboral</h3>
+        <p>Análisis integral de KPIs de ventas, cumplimiento de metas individuales por vendedor y eficiencia comercial por línea de producto.</p>
+        <a href="https://app.powerbi.com/groups/me/reports/7f2bc723-0c3f-48cd-a471-752a85bd5d41/ReportSectionbce81a0c7f21570b7e8c?redirectedFromSignup=1&experience=power-bi" target="_blank" rel="noopener" class="project-link">Ver Reporte BI
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </a>
       </div>
@@ -1122,106 +1255,153 @@ NAV
 </section>
 
 <!-- ============================================================
-     FORMACIÓN
+     FORMACIÓN COMPLEMENTARIA & CERTIFICADOS
      ============================================================ -->
-<section class="section" id="formacion">
+<section class="section section-alt" id="formacion">
   <div class="container">
     <div class="section-head reveal">
-      <div class="eyebrow">Formación</div>
-      <h2>Base académica.</h2>
+      <div class="eyebrow">Formación &amp; Certificaciones</div>
+      <h2>Base académica y certificaciones.</h2>
+      <p>Cursos de especialización, diplomas y participaciones en proyectos con respaldo institucional.</p>
     </div>
 
-    <div class="education-list reveal">
-      <div class="education-item">
-        <div class="education-year">2022 — Actualidad</div>
-        <div>
-          <h4>Licenciatura en Economía</h4>
-          <p>Universidad Nacional de Tucumán (FACE-UNT) — Alumno regular avanzado</p>
+    <div class="education-grid reveal">
+
+      <!-- Certificado 1: BID -->
+      <div class="edu-card">
+        <div class="edu-head">
+          <span class="edu-institution">BID · LAPDE (FACE-UNT)</span>
+          <span class="edu-badge">Abr 2026</span>
         </div>
-        <div class="education-tag">Grado</div>
+        <h3>Resiliencia Económica de Comunidades Indígenas y Campesinas</h3>
+        <p>Diagnóstico socio-productivo de los Valles Calchaquíes (AR-T1308-P001). Carga, depuración y estructuración de bases de datos socioeconómicas.</p>
+        <a href="https://drive.google.com/file/d/19kkMg97Ix-DqOLNAqjr-dJ6GuYT1slSu/view?usp=drivesdk" target="_blank" rel="noopener" class="project-link">Ver Certificado (PDF)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
       </div>
 
-      <div class="education-item">
-        <div class="education-year">May — Jun 2025</div>
-        <div>
-          <h4>Modelo de la Unión Europea — Tucumán</h4>
-          <p>Simulación de negociaciones internacionales y política pública</p>
+      <!-- Certificado 2: Banco Mundial -->
+      <div class="edu-card">
+        <div class="edu-head">
+          <span class="edu-institution">Banco Mundial · BIT · INECO</span>
+          <span class="edu-badge">Oct 2025</span>
         </div>
-        <div class="education-tag">Formación complementaria</div>
+        <h3>Proyecto de Ciencias del Comportamiento</h3>
+        <p>Asistente en relevamiento de datos de campo, codificación cuantitativa y análisis de patrones conductuales aplicados a políticas públicas.</p>
+        <a href="https://drive.google.com/file/d/1F-KEHAWPX8_GlgVVfAqOoMIR3zl06DvD/view?usp=drivesdk" target="_blank" rel="noopener" class="project-link">Ver Certificado (PDF)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
       </div>
 
-      <div class="education-item">
-        <div class="education-year">2026</div>
-        <div>
-          <h4>Redacción de Textos Académicos y Técnicos con IA Generativa</h4>
-          <p>SEDI — Instituto de Administración (FACE-UNT)</p>
+      <!-- Certificado 3: Power BI Intermedio -->
+      <div class="edu-card">
+        <div class="edu-head">
+          <span class="edu-institution">Especialización Técnica</span>
+          <span class="edu-badge">2026</span>
         </div>
-        <div class="education-tag">Curso</div>
+        <h3>Power BI Intermedio — Modelado &amp; Visualización</h3>
+        <p>Modelado de datos complejo, lenguaje DAX para métricas de negocio, creación de dashboards interactivos y tableros de control de KPIs.</p>
+        <a href="https://drive.google.com/file/d/12EMQc8UCcv8BkvzuCCqPa7QWXFJnRoL1/view?usp=drivesdk" target="_blank" rel="noopener" class="project-link">Ver Certificado (PDF)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
       </div>
 
-      <div class="education-item">
-        <div class="education-year">En curso</div>
-        <div>
-          <h4>Data Visualization and Building Dashboards with Excel and Cognos</h4>
-          <p>edX</p>
+      <!-- Certificado 4: Redacción con IA -->
+      <div class="edu-card">
+        <div class="edu-head">
+          <span class="edu-institution">SEDI · Inst. Administración (UNT)</span>
+          <span class="edu-badge">2026</span>
         </div>
-        <div class="education-tag">En curso</div>
+        <h3>Redacción de Textos Académicos y Técnicos con IA</h3>
+        <p>Uso de inteligencia artificial generativa aplicada a la estructuración de informes técnicos, síntesis de investigación y documentación de datos.</p>
+        <a href="https://drive.google.com/file/d/1iWuj5e3Z0eLHVoHPB7Vp8MVJG5o0DVvh/view?usp=drivesdk" target="_blank" rel="noopener" class="project-link">Ver Certificado (PDF)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECCIÓN CONTACTO Y COMENTARIOS (SISTEMA DE MENSAJES Y CONTACTO)
+     ============================================================ -->
+<section class="section" id="comentarios">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contacto &amp; Mensajes</div>
+      <h2>Envíame una consulta o propuesta.</h2>
+      <p>Comentarios, oportunidades laborales, proyectos de datos o colaboración estratégica.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <form class="comment-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
+          </div>
+          <div class="form-field">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="mensaje">Comentario o Consulta</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Enviar mensaje</button>
+        <div class="comment-submitted" id="submittedMsg">¡Gracias por escribir! Tu mensaje ha sido enviado correctamente.</div>
+      </form>
+
+      <div class="contact-info-card">
+        <div>
+          <div class="contact-info-item">
+            <span>Correo Directo</span>
+            <a href="mailto:lautaroluna170103@gmail.com">lautaroluna170103@gmail.com</a>
+          </div>
+          <div class="contact-info-item">
+            <span>Ubicación</span>
+            <p>San Miguel de Tucumán, Argentina</p>
+          </div>
+          <div class="contact-info-item">
+            <span>Disponibilidad</span>
+            <p>Remoto / Híbrido / Presencial</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 20px;">
+          <a href="https://github.com/mlautaroluna" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 8px 16px; font-size: 13px;">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 8px 16px; font-size: 13px;">LinkedIn</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     COMENTARIOS Y CONTACTO
+     FOOTER
      ============================================================ -->
-<section class="section" id="comentarios">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Contacto</div>
-      <h2>Dejá un mensaje o consulta.</h2>
-      <p>Comentarios, ofertas laborales o propuestas de colaboración.</p>
-    </div>
-
-    <form class="comment-form reveal" id="contactForm">
-      <div class="form-row">
-        <div class="form-field">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-      </div>
-      <div class="form-field">
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-      <div class="comment-submitted" id="submittedMsg">¡Gracias por tu mensaje! Me pondré en contacto a la brevedad.</div>
-    </form>
-  </div>
-</section>
-
-<footer id="contacto">
+<footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <h3>Miguel Lautaro Luna</h3>
-        <p>Estudiante avanzado de Licenciatura en Economía (UNT) especializado en análisis de datos socioeconómicos y modelos econométricos.</p>
+        <p>Estudiante avanzado de Licenciatura en Economía (UNT) especializado en análisis de datos socioeconómicos, modelos econométricos y Business Intelligence.</p>
       </div>
       <div class="footer-col">
-        <h5>Navegación</h5>
+        <h5>Secciones</h5>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#metricas">Métricas</a>
         <a href="#herramientas">Herramientas</a>
         <a href="#proyectos">Investigación</a>
+        <a href="#formacion">Formación</a>
       </div>
       <div class="footer-col">
         <h5>Contacto</h5>
         <a href="mailto:lautaroluna170103@gmail.com">lautaroluna170103@gmail.com</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/mlautaroluna" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1232,12 +1412,10 @@ NAV
 </footer>
 
 <script>
-// Menu Mobile
-const burger = id('burger');
-const mobileMenu = id('mobileMenu');
-const overlay = id('overlay');
-
-function id(e){return document.getElementById(e);}
+// Manejo del menú desplegable móvil
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+const overlay = document.getElementById('overlay');
 
 if(burger){
   burger.addEventListener('click', ()=>{
@@ -1255,7 +1433,16 @@ if(overlay){
   });
 }
 
-// Reveal animation
+// Cierre del menú móvil al hacer clic en un enlace
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('open');
+  });
+});
+
+// Animación Reveal al hacer Scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -1266,12 +1453,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Simple Form Submit Handler
-const form = id('contactForm');
+// Manejo del formulario de contacto
+const form = document.getElementById('contactForm');
 if(form){
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    id('submittedMsg').classList.add('visible');
+    document.getElementById('submittedMsg').classList.add('visible');
     form.reset();
   });
 }
